@@ -2,7 +2,7 @@
   "name": "node-websocket-temperature",
   "version": "1.0.0",
   "description": "A simple project for a friend that generates random temperatures, based on the WebSocket.",
-  "keywords": ["node", "websocket", "temperatures"],
+  "keywords": ["nodejs", "websocket", "temperatures"],
   "main": "index.js",
   "scripts": {
     "start": "node ./index.js",
