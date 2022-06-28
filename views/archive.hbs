@@ -1,0 +1,22 @@
+<div class='container mt-5'>
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th scope='col' style='width: 20%;'>Data pomiaru</th>
+        {{#each points}}
+          <th scope='col' style='width: 20%;'>{{this}}</th>
+        {{/each}}
+      </tr>
+    </thead>
+    <tbody>
+      {{#each archiveData}}
+        <tr>
+          <td>{{this.date}}</td>
+          {{#each this.temperatures}}
+            <td style='color: {{this.valueColor}};'>{{this.value}} °C</td>
+          {{/each}}
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
