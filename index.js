@@ -14,7 +14,7 @@ const points = ['Suszarnia 1', 'Suszarnia 2', 'Suszarnia 3', 'Suszarnia 4'];
 const minTemperature = -10;
 const maxTemperature = 50;
 const warningTemperature = 40;
-const refreshIntervalSec = 5;
+const refreshIntervalSec = 0.5;
 const viewData = {
   points,
   warningTemperature,
@@ -35,9 +35,16 @@ mongoose
         date: formatDate(new Date()),
         temperatures: points.map((point) => {
           const temperatureValue = randomInteger(
-            minTemperature,
-            maxTemperature
+            minTemperature * 2,
+            maxTemperature * 2
           );
+
+          if (
+            temperatureValue < minTemperature ||
+            temperatureValue > maxTemperature
+          ) {
+            return null;
+          }
 
           return {
             point,

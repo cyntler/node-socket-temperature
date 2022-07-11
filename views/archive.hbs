@@ -13,7 +13,11 @@
         <tr>
           <td>{{this.date}}</td>
           {{#each this.temperatures}}
-            <td style='color: {{this.valueColor}};'>{{this.value}} °C</td>
+            {{#if this}}
+              <td style='color: {{this.valueColor}};'>{{this.value}} °C</td>
+            {{else}}
+              <td>Błędne dane</td>
+            {{/if}}
           {{/each}}
         </tr>
       {{/each}}
